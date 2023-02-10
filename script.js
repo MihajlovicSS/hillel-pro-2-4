@@ -32,7 +32,6 @@ function getOperands(numberOperands){
         do {
             number = prompt(`Please enter ${NAMES_OF_NUMBERS[i]} operand.`);
             if (validation(number)){
-                console.log(number);
                 operands.push(number); 
                 break;
             }
@@ -49,7 +48,7 @@ function calculation(operator, operands) {
     return result;
 }
 function showResult (operands, operator, result){
-    alert(`${operands.join(operator)} = ${result}`);
+    alert(`${operands.join([' ' + operator + ' '])} = ${result}`);
 }
 function validation(number){
     if(isNaN(number) || number.trim() === '') return false;
